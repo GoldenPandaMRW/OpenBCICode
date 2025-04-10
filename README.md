@@ -5,10 +5,12 @@ Includes scripts to read EEG signals and plot it visually.
 
 # Installing
 1. Fork
-0. Make venv (if you don't have one): `python -m venv .venv`
+0. Make venv (if you don't have one):
+    - Windows: `python -m venv .venv`
+    - Linux.Mac: `python3 -m venv .venv`
 0. Activate venv:
     - Windows: `.venv\bin\activate.bat`
-    - Linux/Max: `.venv/bin/activate`
+    - Linux/Mac: `.venv/bin/activate`
 0. `pip install -r requirements.txt`
 
 # Running
