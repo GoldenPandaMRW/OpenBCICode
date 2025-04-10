@@ -6,7 +6,6 @@ from brainflow.board_shim import BoardShim, BrainFlowInputParams, BoardIds
 from brainflow.data_filter import DataFilter, FilterTypes, DetrendOperations
 from PyQt5 import QtGui, QtCore
 from PyQt5.QtWidgets import QApplication
-#from pyqtgraph.Qt import QtGui, QtCore
 
 params = BrainFlowInputParams()
 params.serial_port = "COM7"
@@ -22,9 +21,7 @@ class Graph:
         self.window_size = 4
         self.num_points = self.window_size * self.sampling_rate
 
-        #self.app = QtGui.QApplication([])
         self.app = QApplication([])
-        #self.win = pg.GraphicsWindow(title='BrainFlow Plot', size=(800, 600))
         self.win = pg.GraphicsLayoutWidget()
         self.win.setWindowTitle('BrainFlow Plot')
         self.win.resize(800, 600)
@@ -35,7 +32,6 @@ class Graph:
         timer = QtCore.QTimer()
         timer.timeout.connect(self.update)
         timer.start(self.update_speed_ms)
-        #QtGui.QApplication.instance().exec_()
         QApplication.instance().exec_()
 
     def _init_timeseries(self):
@@ -110,7 +106,7 @@ def main():
         board_shim.prepare_session()
         board_shim.start_stream(450000, args.streamer_params)
         Graph(board_shim)
-    except BaseException:
+    except Exception:
         logging.warning('Exception', exc_info=True)
     finally:
         logging.info('End')
