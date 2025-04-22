@@ -11,11 +11,10 @@ from PyQt5.QtWidgets import QApplication
 # I just added this I realised they were
 # different
 DEFAULT_SERIAL_PORT = "COM6"
-DEFAULT_PARAM_SERIAL_PORT = "COM7"
 DEFAULT_BOARD_ID = 2
 
 params = BrainFlowInputParams()
-params.serial_port = DEFAULT_PARAM_SERIAL_PORT
+params.serial_port = DEFAULT_SERIAL_PORT
 board = BoardShim(BoardIds.CYTON_BOARD, params)
 
 class Graph:
