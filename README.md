@@ -9,7 +9,9 @@ Includes scripts to read EEG signals and plot it visually.
     - Windows: `python -m venv .venv`
     - Linux/Mac: `python3 -m venv .venv`
 0. Activate venv:
-    - Windows: `.venv\Scripts\activate.bat`
+    - Windows:
+        - If running on powershell: `.venv\Scripts\activate.ps1`
+        - Otherwise: `.venv\Scripts\activate.bat`
     - Linux/Mac: `.venv/bin/activate`
 0. `pip install -r requirements.txt`
 
